@@ -21,7 +21,7 @@
     
     
       
-        <title>图片转换</title>
+        <title>图片转换 - 图片转换</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              图片转换
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    图片转换
   
 
     
@@ -294,8 +294,8 @@
 
 <div class="landing-wrap">
 
-  <!-- ================= 第 1 屏：Hero 首屏 ================= -->
-  <section class="hero-screen">
+  <!-- ================= 第 1 屏：Hero 首屏 (锚点: #hero) ================= -->
+  <section class="hero-screen" id="hero">
     <div class="badge-group">
       <span class="badge-item">🟢 绿色免安装</span>
       <span class="badge-item">🛡️ 100% 本地离线处理</span>
@@ -303,7 +303,7 @@
       <span class="badge-item">🚫 无广告·无捆绑</span>
     </div>
 
-    <!-- 针对反馈加粗、放大、时尚蓝青渐变的主标题 -->
+    <!-- 超粗饱满渐变主标题 -->
     <h1 class="hero-title">轻快、纯粹，为效率而生的<br>本地图片批量转换工具</h1>
     <p class="hero-desc">无需繁琐安装，开箱即用。轻松解决多图片格式互转、尺寸智能缩放与画质微调，守护您的核心图片数据安全。</p>
 
@@ -348,8 +348,8 @@
   </section>
 
 
-  <!-- ================= 第 2 屏：电脑端专屏展示 (Windows 10/11) ================= -->
-  <section class="section-block">
+  <!-- ================= 第 2 屏：电脑端专屏展示 (锚点: #preview) ================= -->
+  <section class="section-block" id="preview">
     <div class="section-header">
       <div class="section-tag">Desktop Experience</div>
       <h2 class="section-title">电脑端：为桌面生产力深度优化</h2>
@@ -406,7 +406,7 @@
   </section>
 
 
-  <!-- ================= 第 3 屏：手机端专屏展示 (Android 9.0+) ================= -->
+  <!-- ================= 第 3 屏：手机端专屏展示 ================= -->
   <section class="section-block">
     <div class="section-header">
       <div class="section-tag">Mobile Experience</div>
@@ -498,8 +498,8 @@
   </section>
 
 
-  <!-- ================= 第 5 屏：常见问题 FAQ ================= -->
-  <section class="section-block">
+  <!-- ================= 第 5 屏：常见问题 FAQ (锚点: #faq) ================= -->
+  <section class="section-block" id="faq">
     <div class="section-header">
       <div class="section-tag">FAQ</div>
       <h2 class="section-title">常见问题解答</h2>
@@ -530,7 +530,7 @@
   </section>
 
 
-<!-- ================= 第 6 屏：更新记录时间线 (纯净版) ================= -->
+  <!-- ================= 第 6 屏：更新记录时间线 (锚点: #changelog) ================= -->
   <section class="changelog-section" id="changelog">
     <div class="section-header">
       <h2 class="section-title" style="color: #2563eb;">更新记录</h2>
@@ -562,9 +562,8 @@
         </div>
       </div>
 
-      <!-- 纯净折叠器：历史版本收纳 -->
+      <!-- 纯净折叠器：历史版本收纳 (无多余背景框) -->
       <details class="timeline-details">
-        <!-- 展开后顺延显示的历史条目 -->
         <div class="timeline-history-items">
           <div class="timeline-item">
             <div class="timeline-node"></div>
@@ -609,7 +608,6 @@
           </div>
         </div>
 
-        <!-- 位于底部的椭圆胶囊开关 -->
         <summary>
           <span class="timeline-pill-btn">
             <span class="btn-text-open">展开全部更新记录 ▾</span>
@@ -624,7 +622,7 @@
     <div class="custom-footer">
       <div>© 2026 图片转换 · 资源仓 · 专注于效率提升的轻量工具</div>
       <div style="margin-top: 8px;">
-        <a href="https://imgto.de5.net/">官网首页</a> ·
+        <a href="#hero">官网首页</a> ·
         <a href="#">资源仓</a> ·
         <a href="#">关于软件</a> ·
         <a href="#">问题反馈</a>
@@ -633,6 +631,54 @@
   </section>
 
 </div>
+
+<!-- 顶栏双增强脚本：挂载导航锚点 + 挂载打赏作者按钮 + 标题文本锁定 -->
+<script>
+(function() {
+  function enhanceHeader() {
+    // 1. 强制将顶栏所有标题文本锁定为“图片转换”
+    document.querySelectorAll(".md-header__topic span").forEach(function(el) {
+      if (el.textContent.trim() === "Home") {
+        el.textContent = "图片转换";
+      }
+    });
+
+    // 2. 在“图片转换”后面挂载导航锚点链接
+    var titleContainer = document.querySelector(".md-header__title");
+    if (titleContainer && !document.querySelector(".custom-nav-links")) {
+      var nav = document.createElement("nav");
+      nav.className = "custom-nav-links";
+      nav.innerHTML = `
+        <a href="#hero" class="custom-nav-item">首页</a>
+        <a href="#preview" class="custom-nav-item">软件界面</a>
+        <a href="#faq" class="custom-nav-item">常见问题</a>
+        <a href="#changelog" class="custom-nav-item">更新记录</a>
+      `;
+      titleContainer.appendChild(nav);
+    }
+
+    // 3. 在明暗切换图标前面挂载「打赏作者」橙色胶囊按钮
+    var paletteOption = document.querySelector('[data-md-component="palette"]') || document.querySelector('.md-header__option');
+    if (paletteOption && !document.querySelector(".donate-btn-header")) {
+      var donateBtn = document.createElement("a");
+      donateBtn.href = "https://imgto.de5.net/donate/";
+      donateBtn.target = "_blank";
+      donateBtn.rel = "noopener noreferrer";
+      donateBtn.className = "donate-btn-header";
+      donateBtn.innerHTML = '<span class="donate-icon">☕</span><span>打赏作者</span>';
+      paletteOption.parentNode.insertBefore(donateBtn, paletteOption);
+    }
+  }
+
+  // 立即执行并注册页面状态变化监听
+  enhanceHeader();
+  if (window.document$) {
+    window.document$.subscribe(enhanceHeader);
+  } else {
+    document.addEventListener("DOMContentLoaded", enhanceHeader);
+  }
+})();
+</script>
 
 
 
