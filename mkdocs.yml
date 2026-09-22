@@ -1,0 +1,16 @@
+site_name: 图片转换
+site_url: https://imgto.de5.net/
+
+theme:
+  name: material
+  language: zh
+  palette:
+    scheme: default
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.sections
+
+nav:
+  - 首页: index.md
