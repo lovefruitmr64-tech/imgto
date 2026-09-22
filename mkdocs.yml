@@ -4,13 +4,28 @@ site_url: https://imgto.de5.net/
 theme:
   name: material
   language: zh
+  logo: assets/001.png
+  favicon: assets/001.png
   palette:
-    scheme: default
-    primary: indigo
-    accent: indigo
+    # 浅色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至暗色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: slate
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
   features:
     - navigation.instant
-    - navigation.sections
+    - content.code.copy
 
-nav:
-  - 首页: index.md
+extra_css:
+  - stylesheets/extra.css
