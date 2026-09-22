@@ -1,0 +1,392 @@
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --orange-badge: #ea580c;
+  --purple-badge: #9333ea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 24px 16px 60px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* 顶部标题区 */
+.header-section {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header-section h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.header-section .sub-line {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.header-section a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header-section a:hover {
+  text-decoration: underline;
+}
+
+/* 第一屏：扫码支付卡片区 */
+.qr-card-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 26px 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.qr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.qr-item {
+  background: #fafafa;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  transition: all 0.2s ease;
+}
+
+.qr-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* 付款码再放大 20%：由 220px -> 265px */
+.qr-item img {
+  width: 265px;
+  height: 265px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.qr-item .pay-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.qr-item.alipay .pay-title { color: #027aff; }
+.qr-item.wechat .pay-title { color: #07c160; }
+
+.qr-item .pay-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* 提示条 */
+.notice-bar {
+  margin-top: 22px;
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #92400e;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.notice-bar strong {
+  color: #78350f;
+}
+
+/* 会员档位区：两排排版 */
+.membership-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tier-group-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 22px 18px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.tier-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tier-group-title {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tier-group-title.standard { color: #0284c7; }
+.tier-group-title.super { color: #9333ea; }
+
+.tier-group-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* 电脑端：一行 5 个卡片平铺 */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.tier-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px 10px;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tier-card:hover {
+  border-color: var(--primary);
+  background: #f8faff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tier-badge.badge-recommend {
+  background: var(--orange-badge);
+}
+
+.tier-badge.badge-special {
+  background: var(--purple-badge);
+}
+
+.tier-card .duration {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.tier-card .price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.tier-card .price .symbol {
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.tier-card .desc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 步骤说明 */
+.steps-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 22px 18px;
+  margin-bottom: 24px;
+}
+
+.step-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.step-box {
+  background: #f8fafc;
+  border: 1px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.step-box h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.step-box p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.copy-email-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 13px;
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.copy-email-btn:hover, .copy-email-btn:active {
+  background: #cbd5e1;
+}
+
+/* 常见问题与说明 */
+.faq-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.faq-section h3 {
+  font-size: 15px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.faq-section ul {
+  padding-left: 20px;
+}
+
+.faq-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ========================================================
+   📱 移动端与平板深度适配规则 (Media Queries)
+   ======================================================== */
+@media (max-width: 860px) {
+  body {
+    padding: 16px 10px 40px;
+  }
+
+  .header-section h1 {
+    font-size: 22px;
+  }
+
+  .qr-card-section {
+    padding: 18px 12px;
+  }
+
+  /* 手机端二维码卡片宽度优化 */
+  .qr-item {
+    max-width: 100%;
+    padding: 16px 12px;
+  }
+
+  /* 手机端档位卡片：2列排版 + 永久会员跨通栏展示 */
+  .tier-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .tier-card:last-child {
+    grid-column: span 2;
+    background: #fdfcfe;
+  }
+
+  .tier-card {
+    padding: 14px 8px;
+  }
+
+  .tier-card .duration {
+    font-size: 13px;
+  }
+
+  .tier-card .price {
+    font-size: 22px;
+  }
+
+  /* 步骤列表单列堆叠 */
+  .step-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .notice-bar {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}
