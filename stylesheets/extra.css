@@ -1,0 +1,525 @@
+/* ==========================================================================
+   图片转换 (imgto.de5.net) 专用定制样式库 - 极简纯净版
+   ========================================================================== */
+
+/* 1. 顶部导航栏纯白与去搜索框 */
+.md-header {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.md-header__title,
+.md-header__button,
+.md-header__topic {
+  color: #1e293b !important;
+  font-weight: 700;
+}
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-header__topic {
+  color: #f8fafc !important;
+}
+.md-search {
+  display: none !important;
+}
+
+/* 2. MkDocs 基础排版重置 */
+.md-content__inner {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+.landing-wrap {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--md-default-fg-color, #1e293b);
+  line-height: 1.6;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+  box-sizing: border-box;
+}
+
+/* 3. 徽章胶囊 */
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+[data-md-color-scheme="slate"] .badge-item {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* 4. Hero 区域：超粗渐变居中大标题 */
+.hero-screen {
+  text-align: center;
+  padding: 24px 0 50px;
+}
+.hero-title {
+  font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 54px;
+  font-weight: 900 !important;
+  line-height: 1.28;
+  letter-spacing: -0.5px;
+  text-align: center !important;
+  margin: 0 auto 22px !important;
+  max-width: 920px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 42%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px transparent;
+  display: block;
+}
+[data-md-color-scheme="slate"] .hero-title {
+  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 45%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-desc {
+  font-size: 17px;
+  color: var(--md-default-fg-color--light, #64748b);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+/* 5. 双端下载卡片 */
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+.dl-card {
+  background: var(--md-default-bg-color, #ffffff);
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.08));
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.dl-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1);
+  border-color: #2563eb;
+}
+.dl-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dl-icon { font-size: 30px; line-height: 1; }
+.dl-card-title { font-size: 18px; font-weight: 700; margin: 0; }
+.dl-tag-blue { font-size: 12px; color: #2563eb; font-weight: 600; }
+.dl-tag-green { font-size: 12px; color: #0d9488; font-weight: 600; }
+.dl-card-meta {
+  font-size: 13px;
+  color: var(--md-default-fg-color--lighter, #94a3b8);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.dl-btn {
+  display: block;
+  text-align: center;
+  background: #2563eb;
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  transition: background 0.2s ease;
+}
+.dl-btn:hover { background: #1d4ed8; }
+.dl-btn-green { background: #0f766e; }
+.dl-btn-green:hover { background: #115e59; }
+
+/* 6. 通用分屏区块 */
+.section-block {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.06));
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 46px;
+}
+.section-tag {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: var(--md-default-fg-color--light, #64748b);
+  margin: 0;
+}
+
+/* 7. 电脑端与手机端专屏布局 */
+.device-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.device-showcase-grid.reverse {
+  grid-template-columns: 1fr 1.4fr;
+}
+.pc-window-box {
+  background: var(--md-default-bg-color, #ffffff);
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.08));
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+.pc-window-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.06));
+}
+.w-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.w-dot-red { background: #ef4444; }
+.w-dot-yellow { background: #f59e0b; }
+.w-dot-green { background: #10b981; }
+.pc-window-img { width: 100%; height: auto; display: block; }
+
+.phone-mockup-wrap { display: flex; justify-content: center; }
+.phone-mockup {
+  width: 100%;
+  max-width: 330px;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 36px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+}
+.phone-screen { border-radius: 28px; overflow: hidden; background: #ffffff; }
+.phone-img { width: 100%; height: auto; display: block; }
+
+.device-feature-list { display: flex; flex-direction: column; gap: 20px; }
+.device-feature-item { display: flex; gap: 16px; align-items: flex-start; }
+.device-feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+[data-md-color-scheme="slate"] .device-feature-icon {
+  background: rgba(59, 130, 246, 0.15);
+}
+.device-feature-text h4 { font-size: 17px; font-weight: 700; margin: 0 0 6px; }
+.device-feature-text p {
+  font-size: 14px;
+  color: var(--md-default-fg-color--light, #64748b);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 8. Bento 四宫格 */
+.card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.feature-box {
+  background: var(--md-default-bg-color, #ffffff);
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.08));
+  border-radius: 14px;
+  padding: 26px 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.feature-box:hover { border-color: #2563eb; transform: translateY(-2px); }
+.feature-icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.feature-box h4 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+.feature-box p {
+  font-size: 14px;
+  color: var(--md-default-fg-color--light, #64748b);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* 9. FAQ 手风琴 */
+.faq-wrap { max-width: 820px; margin: 0 auto; }
+.faq-item {
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.08));
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: var(--md-default-bg-color, #ffffff);
+  overflow: hidden;
+}
+.faq-item summary {
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 20px; font-weight: 400; color: #94a3b8; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-answer {
+  padding: 0 20px 20px;
+  font-size: 14px;
+  color: var(--md-default-fg-color--light, #64748b);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   10. 深度纯净时间线更新记录（彻底抹除一切 MkDocs 默认外框、图标与背景）
+   ========================================================================== */
+.changelog-section {
+  padding: 70px 0 40px;
+}
+.changelog-timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-left: 36px;
+}
+/* 核心左侧时间轴蓝线贯穿 */
+.changelog-timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 0px;
+  left: 9px;
+  width: 2.5px;
+  background: #3b82f6;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+/* 实心圆形节点 */
+.timeline-node {
+  position: absolute;
+  left: -36px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+[data-md-color-scheme="slate"] .timeline-node {
+  border-color: #0f172a;
+}
+.timeline-header {
+  margin-bottom: 12px;
+}
+.timeline-version-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #2563eb;
+  margin: 0 0 4px;
+}
+[data-md-color-scheme="slate"] .timeline-version-title {
+  color: #60a5fa;
+}
+.timeline-date {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* 核心调整：去除各条目的厚重白框与阴影，改为平整微透底色 */
+.timeline-content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.timeline-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(241, 245, 249, 0.7); /* 极简浅灰蓝底色，无任何白框与投影 */
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--md-default-fg-color, #334155);
+}
+[data-md-color-scheme="slate"] .timeline-entry {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+.entry-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* 核心调整：完全强力重置 MkDocs Material 自带的 details 边框、背景及左上角铅笔图标 */
+.md-typeset details.timeline-details,
+.md-typeset details.timeline-details[open],
+details.timeline-details,
+details.timeline-details[open] {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 强制消除 MkDocs 注入在 summary 上的背景条、边框、左侧小图标与右侧箭头 */
+.md-typeset details.timeline-details > summary,
+details.timeline-details > summary {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  list-style: none !important;
+  outline: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px 0 10px !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  order: 2 !important; /* 关键：确保按钮始终沉底展示在列表最下方 */
+}
+.md-typeset details.timeline-details > summary::-webkit-details-marker,
+details.timeline-details > summary::-webkit-details-marker {
+  display: none !important;
+}
+.md-typeset details.timeline-details > summary::before,
+.md-typeset details.timeline-details > summary::after,
+details.timeline-details > summary::before,
+details.timeline-details > summary::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 展开内容的显示顺序处于按钮之上 */
+.timeline-history-items {
+  order: 1 !important;
+}
+
+/* 图 2 同款居中胶囊按钮 */
+.timeline-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 30px;
+  border-radius: 9999px;
+  border: 1.5px solid #2563eb !important;
+  background: #ffffff !important;
+  color: #2563eb !important;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.timeline-pill-btn:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .timeline-pill-btn {
+  background: #0f172a !important;
+  border-color: #60a5fa !important;
+  color: #60a5fa !important;
+}
+[data-md-color-scheme="slate"] .timeline-pill-btn:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* 展开与收起文字切换 */
+.timeline-details .btn-text-close { display: none; }
+.timeline-details .btn-text-open { display: inline; }
+.timeline-details[open] .btn-text-open { display: none; }
+.timeline-details[open] .btn-text-close { display: inline; }
+
+/* 11. 页脚 */
+.custom-footer {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 13px;
+  color: var(--md-default-fg-color--lighter, #94a3b8);
+}
+.custom-footer a { color: inherit; margin: 0 8px; }
+
+/* 12. 手机端响应式 */
+@media (max-width: 992px) {
+  .device-showcase-grid,
+  .device-showcase-grid.reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .landing-wrap { padding: 16px 14px 60px; }
+  .section-block { padding: 48px 0; }
+  .hero-title { font-size: 34px !important; line-height: 1.3; }
+  .hero-desc { font-size: 15px; }
+  .section-title { font-size: 24px; }
+  
+  .download-grid,
+  .card-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .changelog-timeline { padding-left: 28px; }
+  .changelog-timeline::before { left: 7px; }
+  .timeline-node { left: -28px; }
+}
