@@ -723,3 +723,8 @@ details.timeline-details > summary::after {
     font-size: 13px;
   }
 }
+
+/* 彻底隐藏 MkDocs 自带的底栏与版权信息 */
+.md-footer {
+  display: none !important;
+}

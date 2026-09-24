@@ -1,8 +1,9 @@
 ---
-title: 图片转换
+title: 图片工具
 hide:
   - navigation
   - toc
+  - footer
 ---
 
 <div class="landing-wrap">
@@ -76,9 +77,9 @@ hide:
           <span class="w-dot w-dot-red"></span>
           <span class="w-dot w-dot-yellow"></span>
           <span class="w-dot w-dot-green"></span>
-          <span style="font-size:12px; font-weight:600; color:#64748b; margin-left:8px;">图片转换 (k资源仓) - 桌面端</span>
+          <span style="font-size:12px; font-weight:600; color:#64748b; margin-left:8px;">图片工具 - 桌面端</span>
         </div>
-        <img class="pc-window-img" src="assets/002.png" alt="图片转换 Windows 电脑端界面预览" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560?text=PC+Preview+(assets/002.png)';">
+        <img class="pc-window-img" src="assets/002.png" alt="图片工具 Windows 电脑端界面预览" onerror="this.onerror=null; this.src='https://via.placeholder.com/900x560?text=PC+Preview+(assets/002.png)';">
       </div>
 
       <!-- 电脑端重点介绍 -->
@@ -142,7 +143,7 @@ hide:
           <div class="device-feature-icon">📂</div>
           <div class="device-feature-text">
             <h4>系统相册智能归类</h4>
-            <p>默认保存至 <code>手机相册/Pictures/图片转换</code> 或 <code>Download</code> 目录，转换完毕打开系统相册立即可见。</p>
+            <p>默认保存至 <code>手机相册/Pictures/图片工具</code> 或 <code>Download</code> 目录，转换完毕打开系统相册立即可见。</p>
           </div>
         </div>
 
@@ -167,7 +168,7 @@ hide:
       <div class="phone-mockup-wrap">
         <div class="phone-mockup">
           <div class="phone-screen">
-            <img class="phone-img" src="assets/003.png" alt="图片转换 Android 手机端界面预览" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x680?text=Android+Preview+(assets/003.png)';">
+            <img class="phone-img" src="assets/003.png" alt="图片工具 Android 手机端界面预览" onerror="this.onerror=null; this.src='https://via.placeholder.com/380x680?text=Android+Preview+(assets/003.png)';">
           </div>
         </div>
       </div>
@@ -333,12 +334,12 @@ hide:
 
     <!-- 底部友链与版权 -->
     <div class="custom-footer">
-      <div>© 2026 图片转换 · 资源仓 · 专注于效率提升的轻量工具</div>
+      <div>© 2026 图片工具 · 本地离线安全 · 专注于效率提升的轻量工具</div>
       <div style="margin-top: 8px;">
-        <a href="#hero">官网首页</a> ·
-        <a href="#">资源仓</a> ·
-        <a href="#">关于软件</a> ·
-        <a href="#">问题反馈</a>
+        <a href="#">首页</a> ·
+        <a href="https://kzyc.de5.net/">资源仓</a> ·
+        <a href="https://imgto.de5.net/">关于软件</a> ·
+        <a href="https://imgto.de5.net/feedback/">问题反馈</a>
       </div>
     </div>
   </section>
@@ -349,14 +350,14 @@ hide:
 <script>
 (function() {
   function enhanceHeader() {
-    // 1. 强制将顶栏所有标题文本锁定为“图片转换”
+    // 1. 强制将顶栏所有标题文本锁定为“图片工具”
     document.querySelectorAll(".md-header__topic span").forEach(function(el) {
       if (el.textContent.trim() === "Home") {
-        el.textContent = "图片转换";
+        el.textContent = "图片工具";
       }
     });
 
-    // 2. 在“图片转换”后面挂载导航锚点链接
+    // 2. 在“图片工具”后面挂载导航锚点链接
     var titleContainer = document.querySelector(".md-header__title");
     if (titleContainer && !document.querySelector(".custom-nav-links")) {
       var nav = document.createElement("nav");
