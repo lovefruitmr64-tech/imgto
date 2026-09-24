@@ -390,3 +390,39 @@ body {
     padding: 12px 14px;
   }
 }
+
+/* 卡片新版次序微调：打赏赞助在顶部，时长在底部 */
+.tier-card .desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.tier-card .duration {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 6px;
+}
+
+/* 底部版链样式 */
+.custom-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.custom-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.custom-footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
