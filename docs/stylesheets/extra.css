@@ -728,3 +728,117 @@ details.timeline-details > summary::after {
 .md-footer {
   display: none !important;
 }
+
+/* ================= 4渠道下载按钮组与提取码统一外框 ================= */
+.dl-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 16px;
+}
+.dl-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+/* 统一左侧所有下载外框（包括GitHub完全统一相同样式） */
+.dl-link-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+  color: #1e293b !important;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+}
+.dl-link-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+[data-md-color-scheme="slate"] .dl-link-btn {
+  background: #1e293b;
+  color: #f8fafc !important;
+  border-color: #334155;
+}
+[data-md-color-scheme="slate"] .dl-link-btn:hover {
+  background: #334155;
+}
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-brand svg {
+  flex-shrink: 0;
+}
+/* 统一右侧所有提取码外框（固定完全一致的宽高） */
+.copy-code-btn {
+  flex: 0 0 138px;
+  width: 138px;
+  height: 40px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #2563eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.copy-code-btn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+.copy-code-btn.copied {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+}
+.copy-code-btn.none {
+  background: #f8fafc;
+  color: #64748b;
+  border-color: #e2e8f0;
+  cursor: default;
+}
+[data-md-color-scheme="slate"] .copy-code-btn {
+  background: #1e293b;
+  color: #60a5fa;
+  border-color: #334155;
+}
+[data-md-color-scheme="slate"] .copy-code-btn:hover {
+  background: #0f172a;
+  border-color: #60a5fa;
+}
+[data-md-color-scheme="slate"] .copy-code-btn.none {
+  background: #1e293b;
+  color: #94a3b8;
+  border-color: #334155;
+}
+.copy-txt {
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+  margin-left: 2px;
+}
+[data-md-color-scheme="slate"] .copy-txt {
+  color: #94a3b8;
+}
